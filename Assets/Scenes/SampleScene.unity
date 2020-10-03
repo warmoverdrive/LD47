@@ -214,6 +214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1363491413}
   - component: {fileID: 1363491412}
+  - component: {fileID: 1363491414}
   m_Layer: 0
   m_Name: PathObject
   m_TagString: Untagged
@@ -235,21 +236,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path:
     points:
-    - {x: -5.3112254, y: -3.0713954}
-    - {x: -5.988967, y: -0.6009126}
-    - {x: -1.0560113, y: -3.5083482}
-    - {x: -0.63322234, y: -0.98171633}
-    - {x: -0.34039208, y: 0.7682683}
-    - {x: -3.91496, y: -0.1933353}
+    - {x: -6.4383426, y: -5.410164}
+    - {x: -7.220938, y: -2.9867473}
+    - {x: -5.4025803, y: -2.592301}
+    - {x: -3.0565248, y: -1.6016308}
+    - {x: 1.2180786, y: 0.20340836}
+    - {x: 5.297985, y: -6.5730677}
+    - {x: 6.2140174, y: -2.0243}
+    - {x: 7.2066083, y: 2.9046369}
+    - {x: -3.429008, y: -3.5821843}
     - {x: -3.225593, y: 1.4415865}
-    - {x: -2.16251, y: 3.962825}
-    - {x: 0.09006238, y: 2.8793073}
+    - {x: -3.1510534, y: 3.2825034}
+    - {x: -1.4964452, y: 2.7062006}
+    - {x: 0.32482696, y: 2.427814}
+    - {x: 1.4528452, y: 2.2553933}
+    - {x: 1.7820019, y: 2.2327538}
     - {x: 2.2409275, y: 1.1879852}
-    - {x: 3.5812578, y: 0.13402319}
-    - {x: 4.1401176, y: -0.6640736}
-    - {x: 3.1978793, y: -2.0851674}
-    - {x: 0.8310559, y: -5.6548347}
-    - {x: -4.178103, y: -7.2018204}
+    - {x: 2.7821403, y: -0.04411447}
+    - {x: 1.9087898, y: -0.12486911}
+    - {x: 1.7889833, y: -1.4652524}
+    - {x: 1.5320402, y: -4.3399076}
+    - {x: 3.9947894, y: -5.443548}
+    - {x: 1.7337258, y: -7.2372184}
+    - {x: -1.5464163, y: -9.83931}
+    - {x: -5.1516867, y: -9.394474}
     isClosed: 1
     autoSetControlPoints: 1
   anchorColor: {r: 1, g: 0, b: 0, a: 1}
@@ -273,3 +283,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1363491414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363491411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29d2f4b34eda90f49850f2a543027858, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spacing: 1
+  resolution: 1
