@@ -581,6 +581,7 @@ MonoBehaviour:
   - {fileID: 778483136}
   - {fileID: 1120481085}
   - {fileID: 489596771}
+  orbitOrigin: {fileID: 1955148630}
   speedModifier: 0.5
 --- !u!212 &162489961
 SpriteRenderer:
@@ -620,7 +621,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -6741957897816863393, guid: 70b5e081e00c17c4d9f50ee6ae0eba39,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -663,6 +664,7 @@ MonoBehaviour:
   controlPointMoveSpeed: 3
   minOrbitRadius: 3
   maxOrbitRadius: 17
+  orbitOrigin: {fileID: 1955148630}
   anchors_N_S:
   - {fileID: 388021350}
   - {fileID: 1405812471}
@@ -2234,6 +2236,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1951838270}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1955148629
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1955148630}
+  m_Layer: 0
+  m_Name: OrbitOrigin
+  m_TagString: Untagged
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1955148630
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955148629}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2030627593
 GameObject:
   m_ObjectHideFlags: 0

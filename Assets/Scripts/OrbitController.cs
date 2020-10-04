@@ -13,6 +13,9 @@ public class OrbitController : MonoBehaviour
     float minOrbitRadius = 3f;
     [SerializeField]
     float maxOrbitRadius = 20f;
+    [Header("Orbit Origin")]
+    [SerializeField]
+    private Transform orbitOrigin;
     [Header("Anchor Points")]
     [SerializeField]
     [Tooltip("Array of GameObjects acting as Vertical Anchor Points. Order in Array as N then S.")]
@@ -83,6 +86,8 @@ public class OrbitController : MonoBehaviour
             float dist = Vector2.Distance(anchors_E_W[0].position, anchors_E_W[1].position);
             if (dist <= maxOrbitRadius) AdjustWest(Time.deltaTime);
         }
+
+        AdjustOriginPoint();
     }
 
     private void AdjustNorth(float deltaTime)
@@ -130,5 +135,15 @@ public class OrbitController : MonoBehaviour
         controlPoints_U_D[3].localPosition += (right_vector * anchorDelta);
         controlPoints_R_L[2].localPosition += (right_vector * cPointDelta);
         controlPoints_R_L[3].localPosition += (right_vector * cPointDelta);
+    }
+
+    private void AdjustOriginPoint()
+    {
+        float xAnchorDistance = Vector2.Distance(anchors_E_W[0].position, anchors_E_W[1].position);
+        float yAnchorDistance = Vector2.Distance(anchors_N_S[0].position, anchors_N_S[1].position);
+
+        orbitOrigin.localPosition = new Vector2(
+            anchors_E_W[0].position.x - (xAnchorDistance / 2),
+            anchors_N_S[0].position.y - (yAnchorDistance / 2));
     }
 }

@@ -6,11 +6,13 @@ public class BezierFollow : MonoBehaviour
 {
     [SerializeField]
     public Route[] routes;
+    [SerializeField]
+    private Transform orbitOrigin;
+    [SerializeField]
+    private float speedModifier = 0.5f;
     private int currentRoute;
     private float tParam;
     private Vector2 charPosition;
-    [SerializeField]
-    private float speedModifier = 0.5f;
     private bool coroutineAllowed;
 
     private void Start()
@@ -26,6 +28,7 @@ public class BezierFollow : MonoBehaviour
         {
             StartCoroutine(ExecuteRoute(currentRoute));
         }
+        RotateAroundOrigin();
     }
 
     private IEnumerator ExecuteRoute(int routeNumber)
@@ -60,5 +63,10 @@ public class BezierFollow : MonoBehaviour
         coroutineAllowed = true;
     }
 
-    
+    private void RotateAroundOrigin()
+    {
+        Vector3 difference = orbitOrigin.position - transform.position;
+        float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ - 90);
+    }
 }
