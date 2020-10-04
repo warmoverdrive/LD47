@@ -36,38 +36,40 @@ public class OrbitController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
 		{
-           float dist = Vector2.Distance(anchors_E_W[0].position, anchors_E_W[1].position);
-           if (dist >= minOrbitRadius) AdjustNorth(Time.deltaTime);
+           float dist = Vector2.Distance(anchors_N_S[0].position, anchors_N_S[1].position);
+           if (dist <= maxOrbitRadius) AdjustNorth(Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            float dist = Vector2.Distance(anchors_E_W[0].position, anchors_E_W[1].position);
+            float dist = Vector2.Distance(anchors_N_S[0].position, anchors_N_S[1].position);
             if (dist >= minOrbitRadius) AdjustNorth(-Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             float dist = Vector2.Distance(anchors_E_W[0].position, anchors_E_W[1].position);
+            Debug.Log(anchors_E_W[0].position);
             if (dist >= minOrbitRadius) AdjustEast(-Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
             float dist = Vector2.Distance(anchors_E_W[0].position, anchors_E_W[1].position);
-            if (dist >= minOrbitRadius) AdjustEast(Time.deltaTime);
+            Debug.Log(dist);
+            if (dist <= maxOrbitRadius) AdjustEast(Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            float dist = Vector2.Distance(anchors_E_W[0].position, anchors_E_W[1].position);
+            float dist = Vector2.Distance(anchors_N_S[0].position, anchors_N_S[1].position);
             if (dist >= minOrbitRadius) AdjustSouth(Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            float dist = Vector2.Distance(anchors_E_W[0].position, anchors_E_W[1].position);
-            if (dist >= minOrbitRadius) AdjustSouth(-Time.deltaTime);
+            float dist = Vector2.Distance(anchors_N_S[0].position, anchors_N_S[1].position);
+            if (dist <= maxOrbitRadius) AdjustSouth(-Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.A))
@@ -79,7 +81,7 @@ public class OrbitController : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             float dist = Vector2.Distance(anchors_E_W[0].position, anchors_E_W[1].position);
-            if (dist >= minOrbitRadius) AdjustWest(Time.deltaTime);
+            if (dist <= maxOrbitRadius) AdjustWest(Time.deltaTime);
         }
     }
 
