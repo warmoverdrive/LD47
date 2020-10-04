@@ -5,18 +5,13 @@ using UnityEngine;
 public class BezierFollow : MonoBehaviour
 {
     [SerializeField]
-    private Route[] routes;
+    public Route[] routes;
     private int currentRoute;
     private float tParam;
     private Vector2 charPosition;
     [SerializeField]
     private float speedModifier = 0.5f;
     private bool coroutineAllowed;
-
-    public Route this[int index]
-    {
-        get { return routes[index]; }
-    }
 
     private void Start()
     {
@@ -64,4 +59,6 @@ public class BezierFollow : MonoBehaviour
 
         coroutineAllowed = true;
     }
+
+    
 }

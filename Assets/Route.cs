@@ -5,13 +5,14 @@ using UnityEngine;
 public class Route : MonoBehaviour
 {
     [SerializeField]
-    private Transform[] controlPoints;
+    public Transform[] controlPoints;
 
     private Vector2 gizmosPosition;
 
     public Vector2 this[int index]
     {
         get { return controlPoints[index].position; }
+        set { controlPoints[index].position = value; }
     }
 
     private void OnDrawGizmos()
