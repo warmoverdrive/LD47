@@ -32,13 +32,13 @@ public class BezierFollow : MonoBehaviour
     {
         coroutineAllowed = false;
 
-        Vector2 p0 = routes[routeNumber][0];
-        Vector2 p1 = routes[routeNumber][1];
-        Vector2 p2 = routes[routeNumber][2];
-        Vector2 p3 = routes[routeNumber][3];
-
         while (tParam < 1)
         {
+            Vector2 p0 = routes[routeNumber][0];
+            Vector2 p1 = routes[routeNumber][1];
+            Vector2 p2 = routes[routeNumber][2];
+            Vector2 p3 = routes[routeNumber][3];
+
             tParam += Time.deltaTime * speedModifier;
 
             charPosition = Mathf.Pow(1 - tParam, 3) * p0 +
