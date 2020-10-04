@@ -27,83 +27,98 @@ public class OrbitController : MonoBehaviour
     [SerializeField]
     [Tooltip("Array of GameObjects acting as Vertical Control Points. Order in Array as Up then Down.")]
     private Transform[] controlPoints_U_D;
-    
 
+    private Vector3 up_vector = new Vector3(0, 1, 0);
+    private Vector3 right_vector = new Vector3(1, 0, 0);
+
+ 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) //HORIZONTAL CONTRACT
-        {
-            if (Vector2.Distance(anchors_E_W[0].position, anchors_E_W[1].position) >= minOrbitRadius)
-            {
-                HorizontalOrbitAdjustment(-Time.deltaTime);
-            }
+        if (Input.GetKey(KeyCode.W))
+		{
+           float dist = Vector2.Distance(anchors_E_W[0].position, anchors_E_W[1].position);
+           if (dist >= minOrbitRadius) AdjustNorth(Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) //HORIZONTAL EXPAND
+
+        if (Input.GetKey(KeyCode.S))
         {
-            if (Vector2.Distance(anchors_E_W[0].position, anchors_E_W[1].position) <= maxOrbitRadius)
-            {
-                HorizontalOrbitAdjustment(Time.deltaTime);
-            }
+            float dist = Vector2.Distance(anchors_E_W[0].position, anchors_E_W[1].position);
+            if (dist >= minOrbitRadius) AdjustNorth(-Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) //VERTICAL EXPAND
+
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
-            if (Vector2.Distance(anchors_N_S[0].position, anchors_N_S[1].position) <= maxOrbitRadius)
-            {
-                VerticalOrbitAdjustment(Time.deltaTime);
-            }
+            float dist = Vector2.Distance(anchors_E_W[0].position, anchors_E_W[1].position);
+            if (dist >= minOrbitRadius) AdjustEast(-Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) //VERTICAL CONTRACT
+
+        if (Input.GetKey(KeyCode.RightArrow))
         {
-            if (Vector2.Distance(anchors_N_S[0].position, anchors_N_S[1].position) >= minOrbitRadius)
-            {
-                VerticalOrbitAdjustment(-Time.deltaTime);
-            }
+            float dist = Vector2.Distance(anchors_E_W[0].position, anchors_E_W[1].position);
+            if (dist >= minOrbitRadius) AdjustEast(Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            float dist = Vector2.Distance(anchors_E_W[0].position, anchors_E_W[1].position);
+            if (dist >= minOrbitRadius) AdjustSouth(Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            float dist = Vector2.Distance(anchors_E_W[0].position, anchors_E_W[1].position);
+            if (dist >= minOrbitRadius) AdjustSouth(-Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            float dist = Vector2.Distance(anchors_E_W[0].position, anchors_E_W[1].position);
+            if (dist >= minOrbitRadius) AdjustWest(-Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            float dist = Vector2.Distance(anchors_E_W[0].position, anchors_E_W[1].position);
+            if (dist >= minOrbitRadius) AdjustWest(Time.deltaTime);
         }
     }
 
-    private void HorizontalOrbitAdjustment(float deltaTime)
-    {
+    private void AdjustNorth(float deltaTime)
+	{
         float anchorDelta = anchorPointMoveSpeed * deltaTime;
         float cPointDelta = controlPointMoveSpeed * deltaTime;
-        
-        //set anchors
-        anchors_E_W[0].position = new Vector2(
-            anchors_E_W[0].position.x + anchorDelta, anchors_E_W[0].position.y); //set east
-        anchors_E_W[1].position = new Vector2(
-            anchors_E_W[1].position.x - anchorDelta, anchors_E_W[1].position.y); //set west
 
-        //set Right control points
-        controlPoints_R_L[0].position = new Vector2(
-            controlPoints_R_L[0].position.x + cPointDelta, anchors_N_S[0].position.y);
-        controlPoints_R_L[1].position = new Vector2(
-            controlPoints_R_L[1].position.x + cPointDelta, anchors_N_S[1].position.y);
-        //set Left control points
-        controlPoints_R_L[2].position = new Vector2(
-            controlPoints_R_L[2].position.x - cPointDelta, anchors_N_S[0].position.y);
-        controlPoints_R_L[3].position = new Vector2(
-            controlPoints_R_L[3].position.x - cPointDelta, anchors_N_S[1].position.y);
+        anchors_N_S[0].localPosition += (up_vector * anchorDelta);
+        controlPoints_R_L[0].localPosition += (up_vector * cPointDelta);
+        controlPoints_R_L[2].localPosition += (up_vector * cPointDelta);
     }
 
-    private void VerticalOrbitAdjustment(float deltaTime)
+    private void AdjustSouth(float deltaTime)
     {
         float anchorDelta = anchorPointMoveSpeed * deltaTime;
         float cPointDelta = controlPointMoveSpeed * deltaTime;
-        
-        //set anchors
-        anchors_N_S[0].position = new Vector2(
-            anchors_N_S[0].position.x, anchors_N_S[0].position.y + anchorDelta); //set north
-        anchors_N_S[1].position = new Vector2(
-            anchors_N_S[1].position.x, anchors_N_S[1].position.y - anchorDelta); //set south
 
-        //set Up control points
-        controlPoints_U_D[0].position = new Vector2(
-            anchors_E_W[0].position.x, controlPoints_U_D[0].position.y + cPointDelta);
-        controlPoints_U_D[1].position = new Vector2(
-            anchors_E_W[1].position.x, controlPoints_U_D[1].position.y + cPointDelta);
-        //set Down control points
-        controlPoints_U_D[2].position = new Vector2(
-            anchors_E_W[0].position.x, controlPoints_U_D[2].position.y - cPointDelta);
-        controlPoints_U_D[3].position = new Vector2(
-            anchors_E_W[1].position.x, controlPoints_U_D[3].position.y - cPointDelta);
+        anchors_N_S[1].localPosition += (up_vector * anchorDelta);
+        controlPoints_R_L[1].localPosition += (up_vector * cPointDelta);
+        controlPoints_R_L[3].localPosition += (up_vector * cPointDelta);
+    }
+    private void AdjustEast(float deltaTime)
+    {
+        float anchorDelta = anchorPointMoveSpeed * deltaTime;
+        float cPointDelta = controlPointMoveSpeed * deltaTime;
+
+        anchors_E_W[0].localPosition += (right_vector * anchorDelta);
+        controlPoints_U_D[0].localPosition += (right_vector * cPointDelta);
+        controlPoints_U_D[2].localPosition += (right_vector * cPointDelta);
+    }
+
+    private void AdjustWest(float deltaTime)
+    {
+        float anchorDelta = anchorPointMoveSpeed * deltaTime;
+        float cPointDelta = controlPointMoveSpeed * deltaTime;
+
+        anchors_E_W[1].localPosition += (right_vector * anchorDelta);
+        controlPoints_U_D[1].localPosition += (right_vector * cPointDelta);
+        controlPoints_U_D[3].localPosition += (right_vector * cPointDelta);
     }
 }
