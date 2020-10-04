@@ -10,9 +10,19 @@ public class OrbitController : MonoBehaviour
     [SerializeField]
     float controlPointMoveSpeed = 0.25f;
     [SerializeField]
+    float cPointMinDistFromAnchor = 1f;
+    [SerializeField]
     float minOrbitRadius = 3f;
     [SerializeField]
     float maxOrbitRadius = 20f;
+    [SerializeField]
+    float topBoundary = 8f;
+    [SerializeField]
+    float bottomBoundary = -8f;
+    [SerializeField]
+    float rightBoundary = 14f;
+    [SerializeField]
+    float leftBoundary = -14f;
     [Header("Orbit Origin")]
     [SerializeField]
     private Transform orbitOrigin;
@@ -37,54 +47,55 @@ public class OrbitController : MonoBehaviour
  
     private void Update()
     {
+        float vertDist = Vector2.Distance(anchors_N_S[0].position, anchors_N_S[1].position);
+        float horDist = Vector2.Distance(anchors_E_W[0].position, anchors_E_W[1].position);
+
         if (Input.GetKey(KeyCode.W))
 		{
-           float dist = Vector2.Distance(anchors_N_S[0].position, anchors_N_S[1].position);
-           if (dist <= maxOrbitRadius) AdjustNorth(Time.deltaTime);
+           if (vertDist <= maxOrbitRadius && anchors_N_S[0].position.y <= topBoundary) AdjustNorth(Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            float dist = Vector2.Distance(anchors_N_S[0].position, anchors_N_S[1].position);
-            if (dist >= minOrbitRadius) AdjustNorth(-Time.deltaTime);
+            if (vertDist >= minOrbitRadius && 
+                Vector2.Distance(controlPoints_U_D[0].position, anchors_E_W[0].position) >= cPointMinDistFromAnchor)
+                AdjustNorth(-Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            float dist = Vector2.Distance(anchors_E_W[0].position, anchors_E_W[1].position);
-            Debug.Log(anchors_E_W[0].position);
-            if (dist >= minOrbitRadius) AdjustEast(-Time.deltaTime);
+            if (horDist >= minOrbitRadius &&
+                Vector2.Distance(controlPoints_R_L[0].position, anchors_N_S[0].position) >= cPointMinDistFromAnchor) 
+                AdjustEast(-Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            float dist = Vector2.Distance(anchors_E_W[0].position, anchors_E_W[1].position);
-            Debug.Log(dist);
-            if (dist <= maxOrbitRadius) AdjustEast(Time.deltaTime);
+            if (horDist <= maxOrbitRadius && anchors_E_W[0].position.x <= rightBoundary) AdjustEast(Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            float dist = Vector2.Distance(anchors_N_S[0].position, anchors_N_S[1].position);
-            if (dist >= minOrbitRadius) AdjustSouth(Time.deltaTime);
+            if (vertDist >= minOrbitRadius &&
+                Vector2.Distance(controlPoints_U_D[2].position, anchors_E_W[0].position) >= cPointMinDistFromAnchor) 
+                AdjustSouth(Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            float dist = Vector2.Distance(anchors_N_S[0].position, anchors_N_S[1].position);
-            if (dist <= maxOrbitRadius) AdjustSouth(-Time.deltaTime);
+            if (vertDist <= maxOrbitRadius && anchors_N_S[1].position.y >= bottomBoundary) AdjustSouth(-Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            float dist = Vector2.Distance(anchors_E_W[0].position, anchors_E_W[1].position);
-            if (dist >= minOrbitRadius) AdjustWest(-Time.deltaTime);
+            if (horDist <= maxOrbitRadius && anchors_E_W[1].position.x >= leftBoundary) AdjustWest(-Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            float dist = Vector2.Distance(anchors_E_W[0].position, anchors_E_W[1].position);
-            if (dist <= maxOrbitRadius) AdjustWest(Time.deltaTime);
+            if (horDist >= minOrbitRadius &&
+                Vector2.Distance(controlPoints_R_L[2].position, anchors_N_S[0].position) >= cPointMinDistFromAnchor)
+                AdjustWest(Time.deltaTime);
         }
 
         AdjustOriginPoint();
