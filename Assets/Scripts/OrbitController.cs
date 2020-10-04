@@ -89,8 +89,10 @@ public class OrbitController : MonoBehaviour
         float cPointDelta = controlPointMoveSpeed * deltaTime;
 
         anchors_N_S[0].localPosition += (up_vector * anchorDelta);
-        controlPoints_R_L[0].localPosition += (up_vector * cPointDelta);
-        controlPoints_R_L[2].localPosition += (up_vector * cPointDelta);
+        controlPoints_R_L[0].localPosition += (up_vector * anchorDelta);
+        controlPoints_R_L[2].localPosition += (up_vector * anchorDelta);
+        controlPoints_U_D[0].localPosition += (up_vector * cPointDelta);
+        controlPoints_U_D[1].localPosition += (up_vector * cPointDelta);
     }
 
     private void AdjustSouth(float deltaTime)
@@ -99,8 +101,10 @@ public class OrbitController : MonoBehaviour
         float cPointDelta = controlPointMoveSpeed * deltaTime;
 
         anchors_N_S[1].localPosition += (up_vector * anchorDelta);
-        controlPoints_R_L[1].localPosition += (up_vector * cPointDelta);
-        controlPoints_R_L[3].localPosition += (up_vector * cPointDelta);
+        controlPoints_R_L[1].localPosition += (up_vector * anchorDelta);
+        controlPoints_R_L[3].localPosition += (up_vector * anchorDelta);
+        controlPoints_U_D[2].localPosition += (up_vector * cPointDelta);
+        controlPoints_U_D[3].localPosition += (up_vector * cPointDelta);
     }
     private void AdjustEast(float deltaTime)
     {
@@ -108,8 +112,10 @@ public class OrbitController : MonoBehaviour
         float cPointDelta = controlPointMoveSpeed * deltaTime;
 
         anchors_E_W[0].localPosition += (right_vector * anchorDelta);
-        controlPoints_U_D[0].localPosition += (right_vector * cPointDelta);
-        controlPoints_U_D[2].localPosition += (right_vector * cPointDelta);
+        controlPoints_U_D[0].localPosition += (right_vector * anchorDelta);
+        controlPoints_U_D[2].localPosition += (right_vector * anchorDelta);
+        controlPoints_R_L[0].localPosition += (right_vector * cPointDelta);
+        controlPoints_R_L[1].localPosition += (right_vector * cPointDelta);
     }
 
     private void AdjustWest(float deltaTime)
@@ -118,7 +124,9 @@ public class OrbitController : MonoBehaviour
         float cPointDelta = controlPointMoveSpeed * deltaTime;
 
         anchors_E_W[1].localPosition += (right_vector * anchorDelta);
-        controlPoints_U_D[1].localPosition += (right_vector * cPointDelta);
-        controlPoints_U_D[3].localPosition += (right_vector * cPointDelta);
+        controlPoints_U_D[1].localPosition += (right_vector * anchorDelta);
+        controlPoints_U_D[3].localPosition += (right_vector * anchorDelta);
+        controlPoints_R_L[2].localPosition += (right_vector * cPointDelta);
+        controlPoints_R_L[3].localPosition += (right_vector * cPointDelta);
     }
 }
