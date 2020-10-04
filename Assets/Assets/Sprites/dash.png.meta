@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 70b5e081e00c17c4d9f50ee6ae0eba39
+guid: 586a8a0718c230a4a938b57013dad8ed
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6741957897816863393
-    second: Plane1
+      213: 7110878671101974141
+    second: dash_0
   - first:
-      213: -6749197251061845796
-    second: Plane2
+      213: 7643240275301989466
+    second: dash_1
   - first:
-      213: 4194424553861380817
-    second: Plane3
+      213: -8809873816130030523
+    second: dash_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -54,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 350
+  spritePixelsToUnits: 250
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -132,64 +132,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Plane1
+      name: dash_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 775
-        height: 450
+        width: 120
+        height: 60
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5d8cf92301cf62a0800000000000000
-      internalID: -6741957897816863393
+      spriteID: d765fefe97aeea260800000000000000
+      internalID: 7110878671101974141
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plane2
+      name: dash_1
       rect:
         serializedVersion: 2
-        x: 775
+        x: 120
         y: 0
-        width: 775
-        height: 450
+        width: 120
+        height: 60
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd07a63ebd80652a0800000000000000
-      internalID: -6749197251061845796
+      spriteID: a5c7556e88e321a60800000000000000
+      internalID: 7643240275301989466
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plane3
+      name: dash_2
       rect:
         serializedVersion: 2
-        x: 1550
+        x: 240
         y: 0
-        width: 775
-        height: 450
+        width: 120
+        height: 60
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1da7512a8e6953a30800000000000000
-      internalID: 4194424553861380817
+      spriteID: 544fd81e07a0db580800000000000000
+      internalID: -8809873816130030523
       vertices: []
       indices: 
       edges: []
