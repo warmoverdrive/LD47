@@ -31,4 +31,12 @@ public class SpawnController : MonoBehaviour
         CancelInvoke();
         InvokeRepeating("Spawn", 2, Random.Range(minTimeToSpawn, maxTimeToSpawn));
     }
+
+    public void ResetSpawnRate()
+	{
+        minTimeToSpawn = 3;
+        maxTimeToSpawn = 8;
+        CancelInvoke();
+        InvokeRepeating("Spawn", 2, Random.Range(minTimeToSpawn, maxTimeToSpawn));
+    }
 }

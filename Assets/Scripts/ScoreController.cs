@@ -6,6 +6,8 @@ public class ScoreController : MonoBehaviour
 {
     private ScoreText[] scoreTexts;
     private int score;
+
+    public GameObject spawner;
     void Start()
     {
         scoreTexts = FindObjectsOfType<ScoreText>();
@@ -23,6 +25,7 @@ public class ScoreController : MonoBehaviour
 
     public void StarHit()
 	{
+        if (GetScore() % 5 == 0) spawner.GetComponent<SpawnController>().IncreaseSpawnRate();
         foreach (ScoreText scoreText in scoreTexts)
         {
             score += 1;
