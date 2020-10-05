@@ -242,6 +242,7 @@ GameObject:
   - component: {fileID: 639504971665692359}
   - component: {fileID: 639504971665692356}
   - component: {fileID: 3607399675668443751}
+  - component: {fileID: 1600408283}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -539,6 +540,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1600408283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639504971665692365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148e66728686deb428a8124a37cc17ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &639504971774364879
 GameObject:
   m_ObjectHideFlags: 0

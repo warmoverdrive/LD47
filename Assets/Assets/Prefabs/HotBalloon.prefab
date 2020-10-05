@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b532b0e9d805b0f40b1738835bb121ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plane: {fileID: 0}
 --- !u!68 &883182171414317203
 EdgeCollider2D:
   m_ObjectHideFlags: 0

@@ -43,6 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6deb59bc604609d4bb21148a92a1794d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minTimeToSpawn: 3
+  maxTimeToSpawn: 8
+  minY: -7
+  maxY: 7
   entities:
   - {fileID: 0}
   - {fileID: 0}
