@@ -27,7 +27,7 @@ public class SpawnController : MonoBehaviour
         minTimeToSpawn--;
         maxTimeToSpawn--;
         if (minTimeToSpawn < 1) minTimeToSpawn = 1;
-        if (maxTimeToSpawn < 2) minTimeToSpawn = 2;
+        if (maxTimeToSpawn < 2) maxTimeToSpawn = 2;
         CancelInvoke();
         InvokeRepeating("Spawn", 2, Random.Range(minTimeToSpawn, maxTimeToSpawn));
     }
