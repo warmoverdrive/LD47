@@ -21,4 +21,14 @@ public class SpawnController : MonoBehaviour
         spawnposition.y = Random.Range(minY, maxY);
         Instantiate(entities[Random.Range(0, entities.Length - 1)], spawnposition, Quaternion.identity, this.transform);
     }
+
+    public void IncreaseSpawnRate()
+	{
+        minTimeToSpawn--;
+        maxTimeToSpawn--;
+        if (minTimeToSpawn < 1) minTimeToSpawn = 1;
+        if (maxTimeToSpawn < 2) minTimeToSpawn = 2;
+        CancelInvoke();
+        InvokeRepeating("Spawn", 2, Random.Range(minTimeToSpawn, maxTimeToSpawn));
+    }
 }
