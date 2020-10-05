@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4255591992746489029}
   - component: {fileID: 4255591992746488890}
   - component: {fileID: 4255591992746488891}
+  - component: {fileID: 1861560040407685689}
   m_Layer: 0
   m_Name: RadioTower
   m_TagString: Untagged
@@ -93,7 +94,7 @@ Animator:
   m_GameObject: {fileID: 4255591992746488888}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 579b68dcb89b2864eb67505c33e8daba, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8e4b3258d0567f24c8bece4d10c985b6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -102,3 +103,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1861560040407685689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4255591992746488888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b532b0e9d805b0f40b1738835bb121ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

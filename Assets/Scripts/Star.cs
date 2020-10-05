@@ -8,7 +8,7 @@ public class Star : MonoBehaviour
 
     void Start()
 	{
-        score = (ScoreController)GameObject.Find("Plane").GetComponent<ScoreController>();
+        score = FindObjectOfType<ScoreController>();
 	}
 
     public void Update()

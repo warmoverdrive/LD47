@@ -10,7 +10,7 @@ public class ScoreText : MonoBehaviour
     private void Start()
     {
         textBox = GetComponent<Text>();
-        UpdateText("0");
+        UpdateText((FindObjectOfType<ScoreController>().GetScore()).ToString());
     }
 
     public void UpdateText(string text)

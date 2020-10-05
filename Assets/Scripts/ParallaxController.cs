@@ -11,7 +11,7 @@ public class ParallaxController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x >= -32f)
+        if (transform.position.x >= -repeatDistance)
         {
             transform.position += Vector3.left * scrollSpeed * Time.deltaTime;
 

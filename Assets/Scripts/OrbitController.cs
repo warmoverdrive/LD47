@@ -25,6 +25,9 @@ public class OrbitController : MonoBehaviour
     float rightBoundary = 14f;
     [SerializeField]
     float leftBoundary = -14f;
+    [Header("Canvas Toggles")]
+    [SerializeField]
+    GameObject gameGUI, gameOverGUI;
     [Header("Orbit Origin")]
     [SerializeField]
     private Transform orbitOrigin;
@@ -201,5 +204,8 @@ public class OrbitController : MonoBehaviour
     public void SetDead()
 	{
         dead = true;
+        gameGUI.SetActive(false);
+        gameOverGUI.SetActive(true);
+        GetComponent<ScoreController>().SendScore();
 	}
 }

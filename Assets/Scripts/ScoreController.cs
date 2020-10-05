@@ -4,24 +4,38 @@ using UnityEngine;
 
 public class ScoreController : MonoBehaviour
 {
-    private ScoreText scoreText;
+    private ScoreText[] scoreTexts;
     private int score;
     void Start()
     {
-        scoreText = FindObjectOfType<ScoreText>();
+        scoreTexts = FindObjectsOfType<ScoreText>();
         ResetScore();
     }
 
     public void ResetScore()
 	{
-        score = 0;
-        scoreText.UpdateText(score.ToString());
+        foreach (ScoreText scoreText in scoreTexts)
+        {
+            score = 0;
+            scoreText.UpdateText(score.ToString());
+        }
 	}
 
     public void StarHit()
 	{
-        score += 1;
-        scoreText.UpdateText(score.ToString());
+        foreach (ScoreText scoreText in scoreTexts)
+        {
+            score += 1;
+            scoreText.UpdateText(score.ToString());
+        }
+    }
+
+    public void SendScore()
+    {
+        foreach (ScoreText scoreText in scoreTexts)
+        {
+            scoreText.UpdateText(score.ToString());
+        }
     }
 
     public int GetScore()
