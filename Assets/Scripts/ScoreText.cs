@@ -10,6 +10,7 @@ public class ScoreText : MonoBehaviour
     private void Start()
     {
         textBox = GetComponent<Text>();
+        UpdateText("0");
     }
 
     public void UpdateText(string text)
