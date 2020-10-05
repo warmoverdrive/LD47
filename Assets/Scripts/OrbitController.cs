@@ -45,6 +45,8 @@ public class OrbitController : MonoBehaviour
     [Header("Starting Positions")]
     public StartingPositions sPos;
 
+    private bool dead;
+
     [System.Serializable]
     public class StartingPositions
     {
@@ -61,6 +63,8 @@ public class OrbitController : MonoBehaviour
 
     private void InitializeOrbitPoints()
     {
+        dead = false;
+
         anchors_N_S[0].position = orbitOrigin.position + sPos.verticalAnchorOffset;
         anchors_N_S[1].position = orbitOrigin.position - sPos.verticalAnchorOffset;
         anchors_E_W[0].position = orbitOrigin.position + sPos.horizontalAnchorOffset;
@@ -87,6 +91,7 @@ public class OrbitController : MonoBehaviour
 
     private void Update()
     {
+        if (dead) return;
         float anchorDelta = anchorPointMoveSpeed * Time.deltaTime;
         float cPointDelta = controlPointMoveSpeed * Time.deltaTime;
 
@@ -192,4 +197,9 @@ public class OrbitController : MonoBehaviour
     {
         orbitOrigin.transform.position += direction * originPointMoveSpeed * Time.deltaTime;
     }
+
+    public void SetDead()
+	{
+        dead = true;
+	}
 }

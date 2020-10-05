@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class Star : MonoBehaviour
 {
+    public ScoreController score;
+
+    void Start()
+	{
+        score = (ScoreController)GameObject.Find("Plane").GetComponent<ScoreController>();
+	}
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Star Hit!");
+        score.StarHit();
+        Destroy(this.gameObject);
     }
 }
