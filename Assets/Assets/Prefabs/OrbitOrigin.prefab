@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 1600408283}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -356,6 +356,8 @@ MonoBehaviour:
   bottomBoundary: -8
   rightBoundary: 15
   leftBoundary: -15
+  gameGUI: {fileID: 0}
+  gameOverGUI: {fileID: 0}
   orbitOrigin: {fileID: 639504972284462076}
   anchors_N_S:
   - {fileID: 639504971774364876}
