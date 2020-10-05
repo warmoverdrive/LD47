@@ -8,7 +8,6 @@ public class SpawnController : MonoBehaviour
     private float minTimeToSpawn = 3, maxTimeToSpawn = 8, minY = -7, maxY = 7;
     public GameObject[] entities;
 
-
     // Start is called before the first frame update
     void Start()
     {

@@ -6,6 +6,8 @@ public class ScoreController : MonoBehaviour
 {
     private ScoreText scoreText;
     private int score;
+
+    public GameObject spawner;
     void Start()
     {
         scoreText = FindObjectOfType<ScoreText>();
@@ -22,10 +24,17 @@ public class ScoreController : MonoBehaviour
 	{
         score += 1;
         scoreText.UpdateText(score.ToString());
+        AdjustDifficulty();
     }
 
     public int GetScore()
 	{
         return score;
+	}
+
+    private void AdjustDifficulty()
+	{
+        if (GetScore() % 5 == 0)
+            spawner.GetComponent<SpawnController>().IncreaseSpawnRate();
 	}
 }
