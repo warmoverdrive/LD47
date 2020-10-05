@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 680370196804176393}
   - component: {fileID: 680370196804176392}
   - component: {fileID: 680370196804176399}
-  - component: {fileID: 680370196804176394}
   - component: {fileID: 680370196804176395}
   - component: {fileID: 680370196804176404}
+  - component: {fileID: 883182171414317203}
   m_Layer: 0
   m_Name: HotBalloon
   m_TagString: Untagged
@@ -105,32 +105,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &680370196804176394
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680370196804176398}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.0007327, y: 4}
-    newSize: {x: 3.0007327, y: 4}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.0007327, y: 4}
-  m_EdgeRadius: 0
 --- !u!50 &680370196804176395
 Rigidbody2D:
   serializedVersion: 4
@@ -164,3 +138,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b532b0e9d805b0f40b1738835bb121ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!68 &883182171414317203
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680370196804176398}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.045259118, y: 1.4347653}
+  - {x: -0.5607033, y: 1.2774744}
+  - {x: -0.78890514, y: 0.7284951}
+  - {x: -0.7174463, y: 0.049354553}
+  - {x: -0.27176, y: -0.7351885}
+  - {x: -0.14299583, y: -1.0310023}
+  - {x: -0.112356186, y: -1.4226284}
+  - {x: 0.10818434, y: -1.4079056}
+  - {x: 0.22405815, y: -0.8631239}
+  - {x: 0.72998524, y: 0.07886028}
+  - {x: 0.8339443, y: 0.5985818}
+  - {x: 0.5911455, y: 1.1198239}
+  - {x: 0.23938417, y: 1.3319478}
+  - {x: -0.049341083, y: 1.4347653}

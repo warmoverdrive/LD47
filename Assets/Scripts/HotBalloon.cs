@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HotBallonScript : MonoBehaviour
+public class HotBalloon : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Hit1");
+        Debug.Log("Hot Balloon Hit!");
     }
 }

@@ -60,9 +60,10 @@ public class Route : MonoBehaviour
                 3 * (1 - t) * Mathf.Pow(t, 2) * controlPoints[2].position +
                 Mathf.Pow(t , 3) * controlPoints[3].position;
 
-            Gizmos.DrawSphere(markerPos, 0.1f);
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawSphere(markerPos, 0.05f);
         }
-
+        Gizmos.color = Color.black;
         Gizmos.DrawLine(controlPoints[0].position, controlPoints[1].position);
         Gizmos.DrawLine(controlPoints[2].position, controlPoints[3].position);
     }
