@@ -6,7 +6,17 @@ public class HotBalloon : MonoBehaviour
 {
     public GameObject plane;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+	public void Update()
+	{
+        UpdatePosition(Time.deltaTime);
+	}
+
+    void UpdatePosition(float delta)
+	{
+        this.transform.localPosition += (Vector3.left * delta); 
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Hot Balloon Hit!");
         plane.GetComponent<BezierFollow>().enabled = false;
