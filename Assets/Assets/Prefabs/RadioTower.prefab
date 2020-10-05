@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4255591992746488890}
   - component: {fileID: 4255591992746488891}
   - component: {fileID: 1861560040407685689}
+  - component: {fileID: 2865013743694625120}
   m_Layer: 0
   m_Name: RadioTower
   m_TagString: Untagged
@@ -115,3 +116,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b532b0e9d805b0f40b1738835bb121ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTower: 1
+--- !u!68 &2865013743694625120
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4255591992746488888}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 1.3570373, y: -3.1811566}
+  - {x: 1.099326, y: -3.3615012}
+  - {x: 0.11972141, y: -3.3280349}
+  - {x: -1.2350934, y: -3.3813863}
+  - {x: -0.63489455, y: 1.1083751}
+  - {x: -0.4115973, y: 2.0752187}
+  - {x: -0.14418852, y: 2.1628249}
+  - {x: 0.1502977, y: 2.0186057}
+  - {x: 0.38488048, y: 1.0843401}
+  - {x: 1.301435, y: -3.2352252}

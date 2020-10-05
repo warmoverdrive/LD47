@@ -8,6 +8,8 @@ public class HotBalloon : MonoBehaviour
     float lateralSpeed;
     float randomJitter;
 
+    [SerializeField] bool isTower;
+
 	public void Update()
 	{
         UpdatePosition(Time.deltaTime);
@@ -17,7 +19,9 @@ public class HotBalloon : MonoBehaviour
 
     void UpdatePosition(float delta)
 	{
-        this.transform.localPosition += (new Vector3(lateralSpeed, Mathf.Sin(Time.time + randomJitter), 0) * delta);
+        float oscillation = Mathf.Sin(Time.time + randomJitter);
+        if (isTower) oscillation = 0;
+        this.transform.localPosition += (new Vector3(lateralSpeed, oscillation, 0) * delta);
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)

@@ -263,6 +263,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132850840}
   m_CullTransparentMesh: 0
+--- !u!1 &161134523 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8925862179190157922, guid: 3176bd80ee42347448dd0571702e28c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 8925862179368534745}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &236607662
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,6 +1359,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1600408283, guid: 1e3f48625ab652743be031a28b930fa5, type: 3}
+      propertyPath: spawner
+      value: 
+      objectReference: {fileID: 161134523}
     - target: {fileID: 639504971665692353, guid: 1e3f48625ab652743be031a28b930fa5,
         type: 3}
       propertyPath: gameGUI
@@ -1363,6 +1373,26 @@ PrefabInstance:
       propertyPath: gameOverGUI
       value: 
       objectReference: {fileID: 1576338739}
+    - target: {fileID: 639504971665692359, guid: 1e3f48625ab652743be031a28b930fa5,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.028088093
+      objectReference: {fileID: 0}
+    - target: {fileID: 639504971665692359, guid: 1e3f48625ab652743be031a28b930fa5,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.0857673
+      objectReference: {fileID: 0}
+    - target: {fileID: 639504971665692359, guid: 1e3f48625ab652743be031a28b930fa5,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.016049862
+      objectReference: {fileID: 0}
+    - target: {fileID: 639504971665692359, guid: 1e3f48625ab652743be031a28b930fa5,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.0918703
+      objectReference: {fileID: 0}
     - target: {fileID: 639504972284462076, guid: 1e3f48625ab652743be031a28b930fa5,
         type: 3}
       propertyPath: m_LocalPosition.x
