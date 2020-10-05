@@ -5,14 +5,19 @@ using UnityEngine;
 public class HotBalloon : MonoBehaviour
 {
 
+    float lateralSpeed;
+    float randomJitter;
+
 	public void Update()
 	{
         UpdatePosition(Time.deltaTime);
-	}
+        lateralSpeed = Random.Range(-5.0f, -1.0f);
+        randomJitter = Random.Range(0f, 1.0f);
+    }
 
     void UpdatePosition(float delta)
 	{
-        this.transform.localPosition += (Vector3.left * delta); 
+        this.transform.localPosition += (new Vector3(lateralSpeed, Mathf.Sin(Time.time + randomJitter), 0) * delta);
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)
