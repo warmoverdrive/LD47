@@ -23,7 +23,7 @@ public class Star : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "player")
+        if (collision.tag == "Player")
 		{
             score.StarHit();
             Destroy(this.gameObject);
