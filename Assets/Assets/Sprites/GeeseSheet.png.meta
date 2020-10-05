@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 586a8a0718c230a4a938b57013dad8ed
+guid: a232345288206d143b1b52f508b259fd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7110878671101974141
-    second: dash_0
+      213: -6203465326512826834
+    second: GeeseSheet_0
   - first:
-      213: 7643240275301989466
-    second: dash_1
+      213: 873383630090022802
+    second: GeeseSheet_1
   - first:
-      213: -8809873816130030523
-    second: dash_2
+      213: -7545583920943660230
+    second: GeeseSheet_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -54,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 250
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -132,13 +132,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dash_0
+      name: GeeseSheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 120
-        height: 60
+        width: 700
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,20 +146,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d765fefe97aeea260800000000000000
-      internalID: 7110878671101974141
+      spriteID: e2610c4272dd8e9a0800000000000000
+      internalID: -6203465326512826834
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash_1
+      name: GeeseSheet_1
       rect:
         serializedVersion: 2
-        x: 120
+        x: 700
         y: 0
-        width: 120
-        height: 60
+        width: 700
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,20 +167,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5c7556e88e321a60800000000000000
-      internalID: 7643240275301989466
+      spriteID: 29f2820c8c1ee1c00800000000000000
+      internalID: 873383630090022802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash_2
+      name: GeeseSheet_2
       rect:
         serializedVersion: 2
-        x: 240
+        x: 1400
         y: 0
-        width: 120
-        height: 60
+        width: 700
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,8 +188,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 544fd81e07a0db580800000000000000
-      internalID: -8809873816130030523
+      spriteID: a330141f663b84790800000000000000
+      internalID: -7545583920943660230
       vertices: []
       indices: 
       edges: []
